@@ -1,0 +1,157 @@
+.card {
+	width: 25%;
+	background-color: #F3F4F6;
+	box-shadow: 0px 8px 5px 0px rgba(0,0,0,0.25);
+	border-radius: 29px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	&__title {
+		width: 100%;
+		text-align: center;
+		padding: .5em;
+		border-top-left-radius: 29px;
+		border-top-right-radius: 29px;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		&--primary-light {
+			background-color: #0e384a82;
+			color: #0e384a;
+		}	
+		&--primary {
+			background-color: #0e384a;
+			color: #f3f4f6;
+		}
+	}
+	&__price {
+		font-weight: bold;
+		font-size: 1.5em;
+		font-style: italic;
+	}
+	&__list {
+		width: 100%;
+		span {
+			padding: .2em;
+			color: #0e384a;
+			font-weight: bold;
+			margin-right: .5rem;
+		}
+	}
+	&__item {
+		padding: .5em 3em;
+		&:nth-of-type(odd) {
+			background-color: #F9FAFB;
+		}
+	}
+	&__btn {
+		margin-bottom: 1rem;
+		min-width: 25%;
+		padding: .4em 1.5em;
+		margin-top: 5rem; 
+	}
+	&--1,
+	&--2,
+	&--3 {
+		flex-grow: 1;
+
+	}
+	&--1,
+	&--3 {
+		height: 50rem;
+
+	}
+
+	&--1 {
+		position: relative;
+		left: 3rem;
+	}
+	&--2 {
+		height: 54rem;
+		position: relative;
+		top: -2rem;
+		z-index: 1;
+	}
+	&--3 {
+		position: relative;
+		right: 3rem;
+		overflow: hidden;
+
+		h3 {
+			margin-bottom: 5rem;
+		}
+		p {
+			margin-top: 4rem;
+		}
+		ul {
+			li {
+				padding-left: 6rem;
+			}
+		}
+	}
+}
+
+@include respond(tab-port) {
+	.card {
+		flex: 0 0 60%;
+		width: 60%;
+		margin-bottom: 2rem;
+		&--1 {
+			height: 30rem;
+			position: relative;
+			left: 0;
+		}
+		&--2 {
+			height: 40rem;
+			position: relative;
+			top: 0;
+		}
+		&--3 {
+			height: 57rem;
+			position: relative;
+			right: 0;
+			overflow: hidden;
+
+			
+		}
+
+	}
+}
+
+@include respond(phone) {
+	.card {
+		display: flex;
+		width: 97%;
+		&__item {
+			padding: .5em 3em;
+			&:nth-of-type(odd) {
+				background-color: #F9FAFB;
+			}
+		}
+		&__btn {
+			margin-bottom: 1rem;
+			min-width: 25%;
+			padding: .4em 1.5em;
+			margin-top: 5rem; 
+		}
+		&--1,
+		&--2,
+		&--3 {
+			flex-grow: 1;
+			margin-bottom: 3rem;
+
+		}
+		&--1 {
+			height: 30rem;
+		}
+		&--2 {
+			height: 40rem;
+		}
+		&--3 {
+			height: 57rem;
+		}
+		&__price {
+			margin-top: 5rem;
+		}
+	}
+
+}

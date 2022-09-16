@@ -1,0 +1,19 @@
+.cards {
+	display: flex;
+}
+
+@include respond(tab-port) {
+	.cards {
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+}
+
+@include respond(phone) {
+	.cards {
+		flex-direction: column;
+	}
+
+}

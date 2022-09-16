@@ -1,0 +1,13 @@
+.wrapper {
+	margin: 0 5%;
+}
+.svg {
+	color: red;
+	background-color: pink;
+}
+
+@include respond(tab-land) {
+	.wrapper {
+		margin: 0;
+	}
+}

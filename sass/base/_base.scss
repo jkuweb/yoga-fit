@@ -1,0 +1,24 @@
+:root {
+	--bg: hsl(210, 30%, 30%);
+	--wave: #f3f4f6;
+	--speed-one: 30;
+	--opacity-one: .3;
+	--height-one: 12;
+	--width-one: 800;
+
+	--speed-two: 45;
+	--opacity-two: .6;
+	--height-two: 12;
+	--width-two: 800;
+
+	--speed-three: 15;
+	--opacity-three: 1;
+	--height-three: 6;
+	--width-three: 400;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+

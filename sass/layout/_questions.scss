@@ -1,0 +1,47 @@
+.questions {
+		margin-top: 4rem;
+		display: grid;
+		grid-gap: 2rem;
+		grid-template-columns: repeat(2, 1fr);
+}
+
+.question {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns:  1fr;
+	grid-template-rows: 1fr 1fr;
+	&__img {
+		display: flex;
+		img {
+			width: 2rem;
+		}
+		p {
+			align-self: center;
+			margin-left: 1rem;
+			font-weight: bold;
+			hyphens: auto;
+		}
+	}
+	&__text {
+		padding-left: 4em;
+
+	}
+}
+
+@include respond(phone) {
+	.questions {
+			grid-gap: 2rem;
+			grid-template-columns: 1fr;
+	}
+	.question {
+		grid-template-rows: minmax(5rem,40%);
+		&__img {
+			margin-left: .51rem;
+		}
+		&__text {
+			padding-left: 1em;
+			padding-right: 1em;
+			hyphens: auto;
+		}
+	}
+}

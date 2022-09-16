@@ -1,0 +1,78 @@
+.section-header {
+	height: 70vh;
+	background-image: url('../assets/img/header_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.section-video {
+	background-color:#f3f4f6;
+}
+
+.section-description {
+	width: 100%;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	background-image:url("../assets/svg/Slanted-Gradient.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+
+}
+
+.section-teacher {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	background-image: url("../assets/svg/Simple_Shiny.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.section-testimonials {
+	background-color: #f3f4f6;
+}
+ 
+.section-prices {
+	&__title {
+		margin-bottom: 4rem;
+
+	}
+}
+
+.section-guarantee {
+	background: radial-gradient(#E6E6E6 .8px,transparent .8px),radial-gradient(#E6E6E6 .8px,#fcfcfc .8px);
+	background-size: 32px 32px;
+	background-position: 0 0,16px 16px;
+}
+.section-questions {
+	background-color: #f3f4f6;
+
+}	
+
+
+.section-video,
+.section-description,
+.section-testimonials,
+.section-teacher,
+.section-prices,
+.section-guarantee,
+.section-questions {
+	padding-top:	$section-margin-top;
+	padding-bottom: $section-margin-bottom;
+
+}
+
+@include respond(phone) {
+	.section-teacher {
+		h2 {
+			margin-bottom: 3rem;
+		}
+	}
+}

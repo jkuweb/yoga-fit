@@ -1,0 +1,40 @@
+.wave {
+	position: absolute;
+	bottom: -5%;
+	left: 0;
+	right: 0;
+	&--one {
+		height: calc(var(--height-one, 0) * 1vh);
+		width: calc(var(--width-one, 0) * 1vw);
+	}
+	&--two {
+		height: calc(var(--height-two, 0) * 1vh);
+		width: calc(var(--width-two, 0) * 1vw);
+	}
+	&--three {
+		height: calc(var(--height-three, 0) * 1vh);
+		width: calc(var(--width-three, 0) * 1vw);
+	}
+}
+.path {
+	fill: var(--wave);
+	&--one {
+		opacity: var(--opacity-one);
+		animation: wave calc(var(--speed-one, 0) * 1s) infinite linear;
+	}
+	&--two {
+		opacity: var(--opacity-two);
+		animation: wave calc(var(--speed-two, 0) * 1s) infinite linear;
+	}
+	&--three {
+		opacity: var(--opacity-three);
+		animation: wave calc(var(--speed-three, 0) * 1s) infinite linear;
+
+	}
+}
+
+@keyframes wave {
+	to {
+		transform: translate(-842.698px, 0);
+	}
+}

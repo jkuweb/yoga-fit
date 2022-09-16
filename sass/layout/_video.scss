@@ -1,0 +1,110 @@
+.info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 6rem;
+	grid-row-gap: 1rem;
+	background-image: url('../assets/svg/yoga-flower.svg');
+	background-repeat: no-repeat;
+	background-position: bottom;
+	&__text {
+		font-family: $text-font-family;
+		width: 70%;
+		margin: 0 auto;
+		line-height: 1.6em;
+		font-size: clamp(1em, 3vw, 1.2em);
+		align-self: center;
+		p:first-child {
+			margin-bottom: 1rem;
+			&:first-letter {
+				color: #00543d;
+				float: left;
+				font-size: 5em;
+				margin-right: .2em;
+			}
+		}
+	}
+	&__audio {
+		grid-column: 2;
+		justify-self: center;
+
+	}
+	&__svg {
+		height: auto;
+		position: absolute;
+		top: -25px;
+		left: 25px;
+		z-index: -1;
+
+	}
+	&__video {
+		position: relative;
+		z-index: 1;
+	}
+}
+video {
+	max-width: 100%;
+	display: block;
+}
+audio {
+	width: 13rem;
+	height: 2rem;
+	background: #7a99b9;
+	border-radius: 50px;
+}
+
+@include respond(tab-land) {
+	.info {
+		grid-column-gap: 2rem;
+		&__text {
+			width: 100%;
+			margin: 0 auto;
+			line-height: 1.6em;
+			font-size: 1em;
+			align-self: center;
+		}
+	}
+}
+
+@include respond(tab-port) {
+	.info {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		background-size: contain;
+		&__text {
+			font-family: $text-font-family;
+			width: 95%;
+			margin: 0 auto 3rem auto;
+			font-size: 1.1em;
+			align-self: center;
+			hyphens: auto;
+			line-height: 1.7rem;
+		}
+		&__audio {
+			justify-self: center;
+			grid-column: 1;
+			grid-row: 3;
+		}
+	}
+}
+
+@include respond(phone) {
+	.info {
+		&__svg {
+			left: 0; 
+		}
+		&__text {
+			font-size: .91rem;
+		}
+	}
+}
+
+@include respond(s-phone) {
+	.info {
+		&__svg {
+			top: -20px;
+		}
+		&__text {
+			font-size: .91rem;
+		}
+	}
+}

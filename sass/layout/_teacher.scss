@@ -1,0 +1,108 @@
+.teacher {
+	width: 70%;
+	margin: 0 auto;
+	border: 1px solid #E6E6E6;
+	box-shadow: $box-shadow; 
+	background-color: white;
+	padding: 4em;
+	display: flex;
+	position: relative;
+	z-index: 0;
+	&__img-box {
+		flex: 0 0 50%;
+		position: relative;
+		&::before {
+			content: '';
+			background: repeating-linear-gradient(-45deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 6px,#E6E6E6 6px,#E6E6E6 8px);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: -4%;
+			left: 7%;
+			z-index: -1;
+		}
+	}
+	&__img {
+		display: block;
+		max-width: 100%;
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	&__bio {
+		flex: 0 0 50%;
+		padding: 1em 3em;
+		&::first-letter {
+			color: #00543d;
+		    float: left;
+		    font-size: 5em;
+		    margin-right: .2em;
+		}
+	}
+	&__cv {
+		&:not(span){
+		font-style: italic;
+		}
+		span {
+			color: #c483a9;
+			display: block;
+		}
+	}
+}
+
+// animation
+.slide-top {
+	animation: slideTop 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) alternate forwards;
+}
+
+@keyframes slideTop {
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@include respond(tab-port) {
+	.teacher {
+		width: 100%;
+		flex-direction: row;
+		padding: 0;
+		&__img-box {
+			flex: 0 0 30%;
+			max-width: 30%;
+		}
+		&__bio {
+			flex: 0 0 70%;
+			max-width: 70%;
+			padding: 1em;
+			hyphens: auto;
+			line-height: 1.6em;
+		}
+	}
+
+}
+
+@include respond(phone) {
+	.teacher {
+		width: 100%;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 0;
+		&__img-box {
+			max-width: 100%;
+			margin-bottom: 1rem;
+			&::before {
+				left: 0;
+			}
+		}
+		&__bio {
+			padding: 1em;
+			max-width: 100%;
+			font-size: .91rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+

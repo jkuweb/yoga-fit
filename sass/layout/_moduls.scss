@@ -1,0 +1,171 @@
+.description {
+	&__text {
+		width: 50%;
+		margin: 2rem auto 4rem;
+		text-align: center;
+	}
+	
+	&__underline {
+		position: relative;
+		display: inline-block;
+		&:before {
+			content: "";
+			display: block;
+			width: clamp(30px,20vw,162px);
+			height: .8rem;
+			background-color: #ffb900;
+			position: absolute;
+			top: 59%;
+			left: 49.7%;
+			transform: skew(-8deg) translateX(-45%);
+			z-index: -1;
+		}
+	}
+}
+.moduls {
+	display: flex;
+	flex-direction: column;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		width: 25%;
+		background-color: #E5E7EB;
+		padding: 1em;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+	}
+
+	&__icon {
+		border: 3px solid #ffb900;
+		border-radius: 50px;
+		padding: 1em;
+		align-self: center;
+	}
+
+	&__svg {
+		width: 4em;
+	}
+
+	&__text {
+		padding: 1em;
+	}
+
+	&__link {
+		align-self: center;
+		margin-top: 5rem; 
+	}
+
+
+}
+.icon-animated {
+
+	&--0 {
+		animation: slide .5s ease-in-out 1 alternate both;
+	}
+	&--1 {
+		animation: slide 1s ease-in-out 1 alternate both;
+	}
+	&--2 {
+		animation: slide 1.5s ease-in-out 1 alternate both;
+	}
+	&--3 {
+		animation: slide 2s ease-in-out 1 alternate both;
+	}
+}
+@keyframes slide {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@include respond(tab-land) {
+	.moduls {
+		flex-wrap: wrap;
+		&__list {
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+		&__item {
+			flex: 0 0 47%;
+			width: 47%;
+			margin-bottom: 2rem;
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+	}		
+
+
+
+
+}
+
+
+
+@include respond(tab-port) {
+	.description {
+		&__text {
+			width: 95%;
+			margin: 2rem auto 4rem;
+		}
+
+		&__underline {
+			&:before {
+				width: clamp(100px,20vw,162px);
+				top: 59%;
+				left: 44%;
+			}
+		}
+	}	
+
+
+}
+
+@include respond(phone) {
+	.description {
+		&__text {
+			width: 95%;
+			margin: 2rem auto 4rem;
+			font-size: .91rem;
+		}
+
+		&__underline {
+			&:before {
+				width: clamp(100px,20vw,162px);
+				top: 59%;
+				left: 44%;
+			}
+		}
+	}	
+	.moduls {
+		&__list {
+			flex-direction: column; 
+		}
+		&__item {
+			flex: 0 0 100%;
+			width: 100%;
+			padding-top: 1em;
+			padding-left: 0;
+			padding-right: 0;
+			hyphens: auto;
+		}
+		&__text {
+			font-size: .91rem;
+		}
+	}		
+}	
